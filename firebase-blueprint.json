@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "Ra01Hazard": {
+      "title": "Ra01Hazard",
+      "description": "Workplace Hazard Identification and Risk Assessment Report (RA-01)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string", "maxLength": 64 },
+        "activityName": { "type": "string", "maxLength": 300 },
+        "workArea": { "type": "string", "maxLength": 200 },
+        "workStep": { "type": "string", "maxLength": 500 },
+        "hazardCategory": { "type": "string", "maxLength": 100 },
+        "unsafeAct": { "type": "string", "maxLength": 1000 },
+        "unsafeCondition": { "type": "string", "maxLength": 1000 },
+        "consequences": { "type": "string", "maxLength": 1000 },
+        "initialLikelihood": { "type": "number" },
+        "initialSeverity": { "type": "number" },
+        "initialRiskScore": { "type": "number" },
+        "initialRiskLevel": { "type": "string", "maxLength": 50 },
+        "unforeseenHazards": { "type": "string", "maxLength": 4000 },
+        "hierarchyElimination": { "type": "string", "maxLength": 1000 },
+        "hierarchySubstitution": { "type": "string", "maxLength": 1000 },
+        "hierarchyEngineering": { "type": "string", "maxLength": 1000 },
+        "hierarchyAdministrative": { "type": "string", "maxLength": 1000 },
+        "hierarchyPpe": { "type": "string", "maxLength": 1000 },
+        "residualLikelihood": { "type": "number" },
+        "residualSeverity": { "type": "number" },
+        "residualRiskScore": { "type": "number" },
+        "residualRiskLevel": { "type": "string", "maxLength": 50 },
+        "status": {
+          "type": "string",
+          "enum": ["reported", "investigating", "in_progress", "resolved", "verified"]
+        },
+        "reporterName": { "type": "string", "maxLength": 150 },
+        "reporterDepartment": { "type": "string", "maxLength": 150 },
+        "assignedTo": { "type": "string", "maxLength": 150 },
+        "targetDate": { "type": "string", "maxLength": 50 },
+        "actionPlan": { "type": "string", "maxLength": 2000 },
+        "correctiveNotes": { "type": "string", "maxLength": 2000 },
+        "applicableLaw": { "type": "string", "maxLength": 500 },
+        "photoUrl": { "type": "string", "maxLength": 500000 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["code", "activityName", "workArea", "hazardCategory", "status"]
+    }
+  },
+  "firestore": {
+    "/ra01_hazards/{hazardId}": {
+      "schema": "Ra01Hazard",
+      "description": "Real-time workplace hazard identification reports (RA-01)"
+    }
+  }
+}

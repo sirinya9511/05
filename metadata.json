@@ -1,0 +1,6 @@
+{
+  "name": "Safety Hazard RA01",
+  "description": "ระบบชี้บ่งอันตรายและประเมินความเสี่ยง ติดตามสถานะแบบ Real-time พร้อม AI ช่วยชี้บ่งอันตรายแฝง และจัดเก็บข้อมูลบน Firebase (RA01)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
